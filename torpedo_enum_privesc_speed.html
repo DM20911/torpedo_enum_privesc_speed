@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="css/arf.css"/>
+    <script type="text/javascript" src="js/d3.v3.min.js"></script>
+    <title>Enumeration Privesc Speed</title>
+  </head>
+
+  <body>
+    <div id="body">
+      <div id="header">
+      Enumeration Privesc Speed
+          <hr/>
+      </div>
+    </div>
+
+   <!-- <script src="js/arf.js"></script> -->
+
+   <table border="1" style=”width: 100%”>
+    <caption>ENUMERACIÓN</caption>
+    <colgroup>
+      <col style="width: 20%"/>
+      <col style="width: 40%"/>
+      <col style="width: 40%"/>
+    </colgroup>
+    <thead>
+      <tr>
+        <th rowspan="2">Técnica de enumeración</th>
+        <th colspan="2">Proposiciones</th>
+      </tr>
+      <tr>
+        <th>Comandos básicos de sistema</th>
+        <th>Recursos online</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <td colspan="3">Tabla elaborada por dm20911</td>
+      </tr>
+    </tfoot>
+    <tbody>
+      <tr>
+        <th>Usuarios y Grupos</th>
+        <td>whoami, help, systeminfo, whoami /priv, whoami /all, net user, net localgroup</td>
+        <td> <a href="">https://www.muycomputer.com/2018/10/25/consola-de-windows-guia/<br> https://www.zeppelinux.es/administrar-usuarios-y-grupos-locales-en-windows-10-por-comandos/</a></td>
+      </tr>
+      <tr>
+        <th>Procesos y Servicios</th>
+        <td>tasklist, sc, tasklist /m</td>
+        <td><a href="">https://www.pantallazos.es/2019/11/windows-10-cmd-listar-procesos-sistema-txt.html <br> https://www.linuxito.com/windows/673-listar-procesos-librerias-en-uso-y-servicios-en-windows</a> </td>
+      </tr>
+      <tr>
+        <th>Gestión de Claves</th>
+        <td>reg, reg query (valor), reg add (valor), reg export (valor), reg import (valor)</td>
+        <td><a href="">https://www.profesionalreview.com/2020/05/24/saber-las-contrasenas-guardadas-en-mi-pc/<br> https://thehackerway.com/2021/01/11/enumeracion-en-windows-para-post-explotacion-parte-3/</a></td>
+      </tr>
+      <tr>
+        <th>Archivos y Directorios</th>
+        <td>dir, find, icacls</td>
+        <td><a href="">https://esgeeks.com/buscar-archivos-carpetas-cmd-windows/ <br> https://planetared.com/2017/11/buscar-ficheros-consola-windows-10/</td>
+      </tr>
+      <tr>
+        <th>Tareas Programadas</th>
+        <td>schtasks</td>
+        <td><a href=""> https://docs.microsoft.com/es-es/troubleshoot/windows-client/system-management-components/use-at-command-to-schedule-tasks<br> https://www.ajpdsoft.com/modules.php?name=Foros&file=viewtopic&t=1231</td>
+      </tr>
+      <tr>
+        <th>Programas o Aplicaciones</th>
+        <td>Get-ChildItem 'C:\Program Files\*”</td>
+        <td><a href=""> https://protegermipc.net/2016/05/20/listar-programas-instalados-windows/ <br> https://protegermipc.net/2017/02/16/como-ver-una-lista-de-todos-los-programas-instalados-windows/ <br> https://www.maquinasvirtuales.eu/listar-software-en-powershell/</td>
+      </tr>
+      <tr>
+        <th>Credenciales o passwords</th>
+        <td>reg save HKLM\sam C:\sam, reg save HKLM\system C:\system</td>
+        <td><a href=""> https://hackpuntes.com/obtencion-de-contrasena-de-usuario-en-windows-10-decimo-aniversario/<br> https://securitytwins.com/2019/11/18/obtener-hashes-del-archivo-sam-y-desencriptacion-de-los-mismos-en-windows-10/<br>https://acis.org.co/archivos/Conferencias/2017/Conferencia1310.pdf</td>
+      </tr>
+      <tr>
+        <th>Información de S.O.</th>
+        <td>systeminfo</td>
+        <td><a href="">https://www.ionos.es/digitalguide/servidores/know-how/que-windows-tengo<br> https://www.redeszone.net/2019/03/11/comandos-ping-sistema-operativo/</a></td>
+      </tr>
+      <tr>
+        <th>Información de Red</th>
+        <td>ipconfig, netstat, route</td>
+        <td><a href="">https://openwebinars.net/blog/20-comandos-de-red-mas-importantes-en-windows<br> https://www.redeszone.net/tutoriales/redes-cable/comandos-redes-wi-fi-cmd/</td>
+      </tr>
+      <tr>
+        <th>Tools o scripts</th>
+        <td>Mimikatz, netcat, winPEASany.exe, Seatbelt.exe, PowerUp.ps1, SharpUp.exe, Potato.exe, entre otros</td>
+        <td><a href="">https://github.com/gentilkiwi/mimikatz/wiki<br> https://eternallybored.org/misc/netcat/<br>https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS/winPEASexe<br>https://book.hacktricks.xyz/windows/windows-local-privilege-escalation/seatbelt<br>https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1<br>https://github.com/GhostPack/SharpUp<br>https://github.com/foxglovesec/Potato </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+<br>
+<br>
+<table border="1" style=”width: 100%”>
+  <caption>PRIVESC</caption>
+  <colgroup>
+    <col style="width: 20%"/>
+    <col style="width: 40%"/>
+    <col style="width: 40%"/>
+  </colgroup>
+  <thead>
+    <tr>
+      <th rowspan="2">Técnica de privesc</th>
+      <th colspan="2">Proposiciones</th>
+    </tr>
+    <tr>
+      <th>Comandos relacionados</th>
+      <th>Recursos online</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td colspan="3">Tabla elaborada por dm20911</td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <th>Uso de meterpreter</th>
+      <td>msfconsole</td>
+      <td> <a href="">https://ciberseguridad.blog/analizando-y-detectando-los-reverse-meterpreter-http-de-metasploit-con-radare2/ <br> https://www.metasploit.com/ <br> https://thehackerway.com/2011/04/26/conceptos-basicos-de-meterpreter-metasploit-framework/</brr></a></td>
+    </tr>
+    <tr>
+      <th>Permiso de servicios inseguros</th>
+      <td>accesschk -uwcqv “Authenticated Users” * /accepteula, sc, net start</td>
+      <td><a href="">https://github.com/frizb/Windows-Privilege-Escalation/blob/master/enumeration.md</a></td>
+    </tr>
+    <tr>
+      <th>Shell reversa con msfvenom </th>
+      <td>msfvenom</td>
+      <td><a href="">https://origendata.com/2019/01/03/generar-un-reverse-shell-con-msfvenom-para-sistemas-linux/</a></td>
+    </tr>
+    <tr>
+      <th>Unquoted Service Path </th>
+      <td>sc, accesschk</td>
+      <td><a href="">https://medium.com/@SumitVerma101/windows-privilege-escalation-part-1-unquoted-service-path-c7a011a8d8ae</a></td>
+    </tr>
+    <tr>
+      <th>Weak Registry Permissions </th>
+      <td>sc, reg</td>
+      <td><a href="">https://attack.mitre.org/techniques/T1574/011/<br>https://pentestlab.blog/2017/03/31/insecure-registry-permissions/</a></td>
+    </tr>
+    <tr>
+      <th>Insecure Service Executables</th>
+      <td>sc, accesschk</td>
+      <td><a href="">https://www.tenable.com/plugins/nessus/65057<br>https://gracefulsecurity.com/privesc-insecure-service-permissions/</a></td>
+    </tr>
+    <tr>
+      <th>Ejecuciones automáticas</th>
+      <td>autorun, reg</td>
+      <td><a href="">https://codigoseguro.tech/index.php/2020/03/17/elevacion-de-privilegios-en-windows-10/<br>https://www.adslzone.net/esenciales/windows-10/programar-tareas/</a></td>
+    </tr>
+    <tr>
+      <th>Contraseñas en registro </th>
+      <td>reg </td>
+      <td><a href="">https://www.sysadmit.com/2019/07/windows-donde-guarda-las-contrasenas.html<br>https://miracomosehace.com/cambiar-modificar-contrasena-administrador-regedit/</a></td>
+    </tr>
+    <tr>
+      <th>Contraseñas almacenadas</th>
+      <td>reg query HKLM /f (PALABRA_A_BUSCAR) /t REG_SZ /s</td>
+      <td><a href="">https://book.hacktricks.xyz/windows/windows-local-privilege-escalation<br>https://www.absolomb.com/2018-01-26-Windows-Privilege-Escalation-Guide/</a></td>
+    </tr>
+    <tr>
+      <th>Security Account Manager (SAM)</th>
+      <td>Fila 2 Columna 1</td>
+      <td><a href="">https://www.windows-active-directory.com/windows-security-account-manager.html<br>https://blog.compass-security.com/2019/08/privilege-escalation-in-windows-domains-3-3/</a></td>
+    </tr>
+    <tr>
+      <th>Passing the Hash</th>
+      <td>Obtener hashes de usuarios</td>
+      <td><a href="">https://github.com/Kevin-Robertson/Invoke-TheHash<br>https://github.com/nsacyber/Pass-the-Hash-Guidance<br>https://github.com/byt3bl33d3r/pth-toolkit</a></td>
+    </tr>
+    <tr>
+      <th>Tareas Programadas</th>
+      <td>PS: Get-ScheduledTask</td>
+      <td><a href="">https://www.como5.com/utilice-powershell-para-administrar-tareas-programadas-en-windows/<br>https://www.softzone.es/programas/sistema/taskschedulerview-controlar-tareas-programadas/</a></td>
+    </tr>
+    <tr>
+      <th>Insecure GUI Apps</th>
+      <td>tasklist /V  | findstr (PROGRAMA), </td>
+      <td><a href="">https://0x1.gitlab.io/exploit/Windows-Privilege-Escalation/<br>https://hackersacademy.com/courses/windows-privilege-escalation</a></td>
+    </tr>
+    <tr>
+      <th>Startup Apps </th>
+      <td>Fila 2 Columna 1</td>
+      <td><a href="">https://cd6629.gitbook.io/ctfwriteups/windows-privesc/windows-privesc-arena-wlk<br>https://book.hacktricks.xyz/windows/windows-local-privilege-escalation/privilege-escalation-with-autorun-binaries</a></td>
+    </tr>
+    <tr>
+      <th>Token Impersonation - Rogue Potato</th>
+      <td>Potato.exe</td>
+      <td><a href="">https://ivanitlearning.wordpress.com/2019/07/20/potato-privilege-escalation-exploits-for-windows/<br>https://hunter2.gitbook.io/darthsidious/privilege-escalation/token-impersonation</a></td>
+    </tr>
+    <tr>
+      <th>Token Impersonation - PrintSpoofer</th>
+      <td>PrintSpoofer</td>
+      <td><a href="">https://itm4n.github.io/printspoofer-abusing-impersonate-privileges/<br>https://github.com/itm4n/PrintSpoofer</a></td>
+    </tr>
+    <tr>
+      <th>Privilege Escalation Scripts</th>
+      <td>Mimikatz, netcat, winPEASany.exe, Seatbelt.exe, PowerUp.ps1, SharpUp.exe, Potato.exe, entre otros</td>
+      <td><a href="">https://github.com/gentilkiwi/mimikatz/wiki<br> https://eternallybored.org/misc/netcat/<br>https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/winPEAS/winPEASexe<br>https://book.hacktricks.xyz/windows/windows-local-privilege-escalation/seatbelt<br>https://github.com/PowerShellMafia/PowerSploit/blob/master/Privesc/PowerUp.ps1<br>https://github.com/GhostPack/SharpUp<br>https://github.com/foxglovesec/Potato </td>
+      </tr>
+  </tbody>
+</table>
+
+</html>
+
+    <h3>Notes</h3>
+    Los recursos compartidos en esta página son partes de los estudiados para realizar investigaciones referentes tanto a enumeración como elevación de privilegios.
+    <p>Esta estructura puede ser modificada y utilizada como apoyo en los procesos de elevación de privilegios</p>
+
+    <h3>Para preguntas o proposiciones</h3>
+    Twitter: <a href="https://twitter.com/DM20911">@dm20911</a><br>
+    
+  </body>
+
+</html>
